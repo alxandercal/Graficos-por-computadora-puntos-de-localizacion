@@ -14,13 +14,20 @@ def dist_mas_cerca(origen,cajeros):#el origen es la coordenada del usuario
         if (dist_actual < mas_cerca):
             poss=n
             mas_cerca=dist_actual
-    return poss
+    return poss,mas_cerca
+
+def imprime_cajeros(cajeros):
+    print("Los cajeros disponibles en la region son los siguientes:")
+    for n in range(10):
+        print("Cajero",n+1 ,cajeros[n])
 
 def main():
     cajeros=( (10,10),(50,10),(90,10),(10,50),(50,50),(90,50),(10,90),(50,90),(80,80),(90,90)   )
+    imprime_cajeros(cajeros)
     entrada = input("Ingresa las coordenadas X y Y separadas por una coma: ")
     usuario = [int(n) for n in entrada.split(",")]
-    cercano=  dist_mas_cerca(usuario,cajeros)
-    print("El cajero mas cercano es el ",cercano+1)
+    poss,dist=  dist_mas_cerca(usuario,cajeros)
+    print(f"El cajero mas cercano es el {poss+1} a una distancia de {dist:.2f} metros ")
+
 
 main()
