@@ -20,7 +20,6 @@ def imprime_cajeros(cajeros):
     print("Los cajeros disponibles en la region son los siguientes:")
     for n in range(10):
         print("Cajero",n+1 ,cajeros[n])
-
 def main():
     cajeros=( (10,10),(50,10),(90,10),(10,50),(50,50),(90,50),(10,90),(50,90),(80,80),(90,90)   )
     imprime_cajeros(cajeros)
@@ -28,6 +27,4 @@ def main():
     usuario = [int(n) for n in entrada.split(",")]
     poss,dist=  dist_mas_cerca(usuario,cajeros)
     print(f"El cajero mas cercano es el {poss+1} a una distancia de {dist:.2f} metros ")
-
-
 main()
